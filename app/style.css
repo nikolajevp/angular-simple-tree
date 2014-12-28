@@ -1,0 +1,44 @@
+ul {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAMAAAB/qqA+AAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMNAMM9s3UAAAAXSURBVHjajcEBAQAAAIKg/H/aCQZ70AUBjAATb6YPDgAAAABJRU5ErkJggg==) left top repeat;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+ul ul {
+  background: none;
+  padding-left: 3.5em;
+  overflow: visible;
+}
+
+i {
+  cursor: pointer;
+}
+
+.line{
+  height: 18px;
+  line-height: 18px;
+}
+
+.node-header {
+  white-space: nowrap;
+}
+
+.container-header{
+  text-align: center;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+  padding: 10px;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 0 0 5px #ccc;
+  -moz-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+}

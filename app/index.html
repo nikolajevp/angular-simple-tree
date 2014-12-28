@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>angular-simple-tree example</title>
+  <link href="../bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body ng-cloak>
+<div ng-controller="myController">
+
+  <h4 class="container-header">Extended view</h4>
+  <div class="container">
+    <tree-template nodes="nodes" action="action(params)">
+      <ul>
+        <li ng-repeat="node in nodes">
+          <div class="node-header line">
+            <i class="fa fa-plus-square-o fa-fw" ng-click="node.hide=false" ng-show="node.hide"></i>
+            <i class="fa fa-minus-square-o fa-fw" ng-click="node.hide=true" ng-hide="node.hide"></i>
+
+            <span ng-hide="node.edit">{{node.Name}}</span>
+            <input type="text" ng-model="node.Name" ng-show="node.edit"/>
+            <i class="fa fa-pencil-square-o fa-fw" ng-click="node.edit = !node.edit"></i>
+
+            <i class="fa fa-trash fa-fw" ng-click="action({actionName: 'delete', nodes: nodes, node: node})"></i>
+          </div>
+          <div ng-hide="node.hide">
+            <tree nodes="node.nodes"></tree>
+          </div>
+
+        </li>
+        <li>
+          <div class="line">
+            <i class="fa fa-plus fa-fw" ng-click="action({actionName: 'add', nodes: nodes})">Add</i>
+          </div>
+        </li>
+      </ul>
+    </tree-template>
+
+  </div>
+
+  <h4 class="container-header">Simple view</h4>
+  <div class="container">
+    <tree-template nodes="nodes">
+      <ul>
+        <li ng-repeat="node in nodes">
+          <div class="node-header line">
+            <span>{{node.Name}}</span>
+          </div>
+          <div>
+            <tree nodes="node.nodes"></tree>
+          </div>
+
+        </li>
+      </ul>
+    </tree-template>
+
+  </div>
+</div>
+
+</body>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="angular-simple-tree.js"></script>
+<script src="nodes-service.js"></script>
+<script src="app.js"></script>
+</html>
