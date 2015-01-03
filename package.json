@@ -4,8 +4,8 @@
   "description": "example of recursive tree in angular",
   "main": "app/index.html",
   "scripts": {
-    "postinstall": "bower install",
-    "test": "./node_modules/karma/bin/karma start"
+    "postinstall": "bower install & npm install -g karma-cli",
+    "test": "karma start"
   },
   "author": "Pavel Nikolajev",
   "repository": {
